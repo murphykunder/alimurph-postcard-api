@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 30mm 32mm;
+            background-image: url([[${card_path}]]);
+            background-size: 210mm;
+        }
+
+        .letter {
+            font-family: 'JosefinSans-Regular','NotoEmoji-VariableFont_wght';
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="letter" th:utext="${message}">
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: alimurph-postcard
+
+server:
+  port: 8088
+  servlet:
+    context-path: /api/v1/
+
+application:
+  security:
+    card:
+      secret-key: ${ALIMURPH_POSTCARD_SECRET_KEY}
+
+
+logging:
+  level:
+    root: ERROR
