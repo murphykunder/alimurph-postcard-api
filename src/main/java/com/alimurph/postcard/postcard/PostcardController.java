@@ -23,6 +23,11 @@ public class PostcardController {
     public PostcardController(PostcardService postcardService) {
         this.postcardService = postcardService;
     }
+	
+	@GetMapping(value="/status")
+	public ResponseEntity<Object> getStatus() {
+        return ResponseEntity.ok("Alimurph-postcard API is running");
+    }
 
     @PostMapping(value = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<PostcardCreateResponse> createCard(@RequestBody @Valid Postcard request) throws GeneralSecurityException, IOException {
