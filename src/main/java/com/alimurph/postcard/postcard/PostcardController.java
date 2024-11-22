@@ -24,8 +24,8 @@ public class PostcardController {
         this.postcardService = postcardService;
     }
 	
-	@GetMapping(value="/status")
-	public ResponseEntity<Object> getStatus() {
+	@GetMapping(value="/status", produces = MediaType.TEXT_PLAIN_VALUE)
+	public ResponseEntity<String> getStatus() {
         return ResponseEntity.ok("Alimurph-postcard API is running");
     }
 
@@ -40,7 +40,7 @@ public class PostcardController {
         return ResponseEntity.ok(this.postcardService.getCard(cardId));
     }
 
-    @GetMapping(value = "/export")
+    @GetMapping(value = "/export", produces = MediaType.APPLICATION_PDF_VALUE)
     public ResponseEntity<Object> export(@RequestParam String cardId) throws Exception {
         ByteArrayOutputStream pdfStream = this.postcardService.export(cardId);
 

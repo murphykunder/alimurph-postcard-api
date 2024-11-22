@@ -7,6 +7,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -14,12 +15,15 @@ import java.util.Collections;
 @Configuration
 public class BeansConfig {
 
+	@Value("${application.frontend.url}")
+	private String frontendUrl;
+	
     @Bean
     public CorsFilter corsFilter(){
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         final CorsConfiguration config = new CorsConfiguration();
         // TODO externalize this config to application.yml files
-        config.setAllowedOrigins(Collections.singletonList("https://alimurph-postcard.netlify.app"));
+        config.setAllowedOrigins(Collections.singletonList(this.frontendUrl));
         config.setAllowedHeaders(Arrays.asList(
                 HttpHeaders.ORIGIN,
                 HttpHeaders.CONTENT_TYPE,

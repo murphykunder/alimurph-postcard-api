@@ -13,7 +13,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
 @OpenAPIDefinition(
     info = @Info(
             contact = @Contact(
-                    name = "AliMurph-Postcard"
+                    name = "Alimurph-Postcard"
             ),
             description = "OpenApi documentation for Alimurph-Postcard",
             title = "OpenApi Specification - AliMurph-Postcard",
@@ -21,9 +21,9 @@ import io.swagger.v3.oas.annotations.servers.Server;
             termsOfService = "Terms of Service"
     ),
     servers = {
-            @Server(
+			@Server(
                     description = "Local environment",
-                    url = "http://localhost:8088/api/v1"
+                    url = "http://localhost:8088/api/v1" // mention the base url, rest will be added by swagger based on the route
             ),
     }
 )

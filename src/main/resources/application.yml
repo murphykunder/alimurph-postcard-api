@@ -11,6 +11,10 @@ application:
   security:
     card:
       secret-key: ${ALIMURPH_POSTCARD_SECRET_KEY}
+  frontend:
+    url: ${ALIMURPH_POSTCARD_FRONTEND_URL}
+  assets:
+    path: ${ALIMURPH_POSTCARD_ASSETS_PATH}
 
 
 logging:
