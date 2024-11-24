@@ -6,18 +6,18 @@ import jakarta.validation.constraints.NotNull;
 import java.io.Serializable;
 
 public record Postcard(
-        @NotNull(message = "100")
-        @NotBlank(message = "100")
+        @NotNull(message = "From cannot be blank")
+        @NotBlank(message = "From cannot be blank")
         String from,
-        @NotNull(message = "101")
-        @NotBlank(message = "101")
+        @NotNull(message = "To cannot be blank")
+        @NotBlank(message = "To cannot be blank")
         String to,
-        @NotNull(message = "102")
-        @NotBlank(message = "102")
+        @NotNull(message = "Occasion cannot be blank")
+        @NotBlank(message = "Occasion cannot be blank")
         String occasion,
         Long audio,
-        @NotNull(message = "103")
-        @NotBlank(message = "103")
+        @NotNull(message = "Message cannot be blank")
+        @NotBlank(message = "Message cannot be blank")
         String message
 ) implements Serializable {
 }

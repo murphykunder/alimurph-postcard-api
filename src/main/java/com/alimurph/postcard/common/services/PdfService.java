@@ -1,21 +1,17 @@
 package com.alimurph.postcard.common.services;
 
 import com.alimurph.postcard.postcard.OccasionType;
-import com.openhtmltopdf.extend.FSSupplier;
-import com.openhtmltopdf.outputdevice.helper.BaseRendererBuilder;
 import com.openhtmltopdf.pdfboxout.PdfRendererBuilder;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.helper.W3CDom;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring6.SpringTemplateEngine;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.InputStream;
 import java.nio.file.FileSystems;
 import java.util.HashMap;
 import java.util.Map;
